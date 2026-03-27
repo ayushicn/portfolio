@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
       }
     ],
     approachGoalStatement: 'To improve the CLM dashboard with respect to <span class="highlight-blue">users’ mental models</span> and the <span class="highlight-blue">usability gaps</span>.',
-    approachGoalImageUrl: '/assets/CLM_Research Goal.png',
+    approachGoalImageUrl: 'assets/CLM_Research Goal.png',
     approachGoalPoints: [
       {
         title: 'Initial Assessment',
@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
                 Following image shows the participant criteria that was found appropriate for this study:
               </p>
               <div class="w-full md:w-[75%] bg-[#FFFFFF] border border-gray-100 rounded-[2rem] shadow-xl shadow-gray-50/50 p-4 md:p-6 flex justify-center items-center">
-                <img src="/assets/CLM_Persona.png" alt="Participant criteria" class="w-full max-w-xl h-auto object-contain object-center cursor-zoom-in clickable-img" />
+                <img src="assets/CLM_Persona.png" alt="Participant criteria" class="w-full max-w-xl h-auto object-contain object-center cursor-zoom-in clickable-img" />
               </div>
             </div>
             <div class="quote-box !mt-8 !mb-8">
@@ -368,7 +368,7 @@ export const PROJECTS: Project[] = [
     solution: "A redesign of the CLM dashboard focusing on mental model alignment, including renaming 'Ready' to 'Review', providing clear version differentiation, and context-aware action placement.",
     impact: "",
     impactSummary: "I led the concept validation and usability research for the Whatfix CLM Dashboard, re-defining the research strategy and executing a high-velocity study. This ownership ensured that findings were immediately translated into actionable design decisions, removing critical adoption barriers before the GA launch. My contributions to this project are centered around three key pillars of impact:<br><br><ul class=\"list-disc ml-6 space-y-4\"><li><b>[Strategic] UXR Course-Correction</b>: <span class='font-bold text-gray-900 highlight-blue'>Identified conceptual gaps</span> mid-sprint, <span class='font-bold text-gray-900 highlight-blue'>pivoted methodology</span> to validate core concepts 4 weeks before GA launch.</li><li><b>[Business] Accelerated Market Adoption</b>: Drove an exponential increase in <span class='font-bold text-gray-900 highlight-blue'>client adoption; from 8 to 700+</span>; by implementing high-impact insights derived from the foundational study.</li><li><b>[Organizational] Executive Alignment</b>: <span class='font-bold text-gray-900 highlight-blue'>Unified VP-level stakeholders</span> on the UXR proposal and the final recommendations for product's GA release.</li></ul>",
-    imageUrl: '/assets/CLM_Background.jpg',
+    imageUrl: 'assets/CLM_Background.jpg',
     accentColor: "#3B82F6",
     impactStats: [
       { label: 'Client Adoption Increase', value: '8 → 700', subtext: 'Growth in active client accounts' },
@@ -455,7 +455,7 @@ export const PROJECTS: Project[] = [
     ],
     overview: 'Work In Progress',
     problem: 'TBD',
-    imageUrl: '/assets/AI Project.jpg',
+    imageUrl: 'assets/AI Project.jpg',
     accentColor: "#8B5CF6",
     cardImageTag: 'Foundational Discovery & Strategic Visioning',
     isWIP: true,
@@ -481,7 +481,7 @@ export const PROJECTS: Project[] = [
     ],
     overview: 'Work In Progress',
     problem: 'TBD',
-    imageUrl: '/assets/Whatfix Mirror background.jpg',
+    imageUrl: 'assets/Whatfix Mirror background.jpg',
     accentColor: "#8B5CF6",
     cardImageTag: '0→1 PRODUCT DISCOVERY & STRATEGIC PRODUCT DEFINITION',
     isWIP: true,
@@ -492,7 +492,7 @@ export const PROJECTS: Project[] = [
     id: 'behance-more',
     title: 'See more on Behance',
     tagline: 'Earlier professional and academic case studies',
-    imageUrl: '/assets/behance icon 2.png',
+    imageUrl: 'assets/behance icon 2.png',
     accentColor: "#053EFF",
     methods: [],
     overview: 'Portfolio',

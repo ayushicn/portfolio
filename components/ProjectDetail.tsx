@@ -469,10 +469,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                             {item.label === 'Content Dashboard (CLM)' ? (
                               <div className="flex flex-col items-center">
                                 <img
-                                  src="/assets/CLM_CLM Dashboard.webp"
+                                  src="assets/CLM_CLM Dashboard.webp"
                                   alt="CLM Dashboard Snapshot"
                                   className="w-full rounded-[2.5rem] shadow-md mb-4 cursor-zoom-in"
-                                  onClick={() => setSelectedImage("/assets/CLM_CLM Dashboard.webp")}
+                                  onClick={() => setSelectedImage("assets/CLM_CLM Dashboard.webp")}
                                   referrerPolicy="no-referrer"
                                 />
                                 <p className="text-xs text-gray-500 italic text-center">
@@ -482,10 +482,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                             ) : item.label === 'The Whatfix Platform' ? (
                               <div className="flex flex-col items-center">
                                 <img
-                                  src="/assets/CLM_Whatfix Studio.png"
+                                  src="assets/CLM_Whatfix Studio.png"
                                   alt="Whatfix Studio Snapshot"
                                   className="w-full rounded-[2.5rem] shadow-md mb-4 cursor-zoom-in"
-                                  onClick={() => setSelectedImage("/assets/CLM_Whatfix Studio.png")}
+                                  onClick={() => setSelectedImage("assets/CLM_Whatfix Studio.png")}
                                   referrerPolicy="no-referrer"
                                 />
                                 <p className="text-xs text-gray-500 italic text-center">
@@ -563,10 +563,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                       <div className="w-full px-6 lg:px-12 mb-16 mx-auto">
                         <div className="w-full bg-[#FFFFFF] border border-gray-100 rounded-[2rem] p-2 md:p-5 shadow-xl shadow-gray-50/50 flex justify-center items-center">
                           <img
-                            src="/assets/CLM_RG Thought Process.png"
+                            src="assets/CLM_RG Thought Process.png"
                             alt="Research Goal Mindmap process"
                             className="w-full h-auto object-contain hover:scale-[1.01] transition-transform duration-700 cursor-zoom-in"
-                            onClick={() => setSelectedImage("/assets/CLM_RG Thought Process.png")}
+                            onClick={() => setSelectedImage("assets/CLM_RG Thought Process.png")}
                           />
                         </div>
                       </div>
@@ -592,10 +592,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                                   {point.visualPlaceholder && (
                                     <div className="mt-6 w-full max-w-lg">
                                       <img
-                                        src={`/assets/CLM_${point.visualPlaceholder}.png`}
+                                        src={`assets/CLM_${point.visualPlaceholder}.png`}
                                         alt={point.visualPlaceholder}
                                         className="w-full rounded-[2rem] shadow-lg hover:scale-[1.02] transition-transform duration-500 cursor-zoom-in"
-                                        onClick={() => setSelectedImage(`/assets/CLM_${point.visualPlaceholder}.png`)}
+                                        onClick={() => setSelectedImage(`assets/CLM_${point.visualPlaceholder}.png`)}
                                         onError={(e) => {
                                           e.currentTarget.style.display = 'none';
                                         }}
@@ -639,10 +639,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                       {project.researchProcess.visual && (
                         <div className="mt-8 w-full">
                           <img
-                            src={`/assets/CLM_${project.researchProcess.visual}.png`}
+                            src={`assets/CLM_${project.researchProcess.visual}.png`}
                             alt={project.researchProcess.visual}
                             className="w-full rounded-[2.5rem] shadow-lg hover:scale-[1.01] transition-transform duration-500 cursor-zoom-in"
-                            onClick={() => setSelectedImage(`/assets/CLM_${project.researchProcess.visual}.png`)}
+                            onClick={() => setSelectedImage(`assets/CLM_${project.researchProcess.visual}.png`)}
                             referrerPolicy="no-referrer"
                           />
                         </div>
@@ -677,10 +677,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                                     {item.visuals.map((visual, vIdx) => (
                                       <div key={vIdx} className="w-full flex flex-col items-center">
                                         <img
-                                          src={`/assets/CLM_${visual.placeholder}.png`}
+                                          src={`assets/CLM_${visual.placeholder}.png`}
                                           alt={visual.placeholder}
                                           className="w-full h-auto rounded-[2rem] shadow-lg hover:scale-[1.01] transition-transform duration-500 mb-4 cursor-zoom-in"
-                                          onClick={() => setSelectedImage(`/assets/CLM_${visual.placeholder}.png`)}
+                                          onClick={() => setSelectedImage(`assets/CLM_${visual.placeholder}.png`)}
                                           referrerPolicy="no-referrer"
                                         />
                                         {visual.label && (
@@ -696,10 +696,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                                     {item.visualPlaceholder && (
                                       <div className="mt-12 w-full flex flex-col items-center">
                                         <img
-                                          src={`/assets/CLM_${item.visualPlaceholder}.png`}
+                                          src={`assets/CLM_${item.visualPlaceholder}.png`}
                                           alt={item.visualPlaceholder}
                                           className="w-full h-auto rounded-[2rem] shadow-lg hover:scale-[1.01] transition-transform duration-500 mb-4 cursor-zoom-in"
-                                          onClick={() => setSelectedImage(`/assets/CLM_${item.visualPlaceholder}.png`)}
+                                          onClick={() => setSelectedImage(`assets/CLM_${item.visualPlaceholder}.png`)}
                                           referrerPolicy="no-referrer"
                                         />
                                         {item.visualLabel && (
@@ -712,10 +712,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                                     {item.secondaryVisualPlaceholder && (
                                       <div className="mt-8 w-full flex flex-col items-center">
                                         <img
-                                          src={`/assets/CLM_${item.secondaryVisualPlaceholder}.png`}
+                                          src={`assets/CLM_${item.secondaryVisualPlaceholder}.png`}
                                           alt={item.secondaryVisualPlaceholder}
                                           className="w-full h-auto rounded-[2rem] shadow-lg hover:scale-[1.01] transition-transform duration-500 mb-4 cursor-zoom-in"
-                                          onClick={() => setSelectedImage(`/assets/CLM_${item.secondaryVisualPlaceholder}.png`)}
+                                          onClick={() => setSelectedImage(`assets/CLM_${item.secondaryVisualPlaceholder}.png`)}
                                           referrerPolicy="no-referrer"
                                         />
                                         {item.secondaryVisualLabel && (
@@ -728,10 +728,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                                     {item.tertiaryVisualPlaceholder && (
                                       <div className="mt-8 w-full flex flex-col items-center">
                                         <img
-                                          src={`/assets/CLM_${item.tertiaryVisualPlaceholder}.png`}
+                                          src={`assets/CLM_${item.tertiaryVisualPlaceholder}.png`}
                                           alt={item.tertiaryVisualPlaceholder}
                                           className="w-full h-auto rounded-[2rem] shadow-lg hover:scale-[1.01] transition-transform duration-500 mb-4 cursor-zoom-in"
-                                          onClick={() => setSelectedImage(`/assets/CLM_${item.tertiaryVisualPlaceholder}.png`)}
+                                          onClick={() => setSelectedImage(`assets/CLM_${item.tertiaryVisualPlaceholder}.png`)}
                                           referrerPolicy="no-referrer"
                                         />
                                         {item.tertiaryVisualLabel && (
@@ -774,7 +774,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                     </div>
                     <div className="w-full h-full">
                       <div className="group relative w-full h-full bg-white border border-gray-200 rounded-[2rem] flex flex-col items-center justify-center text-center shadow-inner overflow-hidden hover:border-blue-100 transition-all duration-500 mb-4">
-                        <img src="/assets/CLM_SUS Interpreter.png" alt="Comparative Benchmarking" className="w-full h-auto object-contain cursor-zoom-in" onClick={() => setSelectedImage("/assets/CLM_SUS Interpreter.png")} />
+                        <img src="assets/CLM_SUS Interpreter.png" alt="Comparative Benchmarking" className="w-full h-auto object-contain cursor-zoom-in" onClick={() => setSelectedImage("assets/CLM_SUS Interpreter.png")} />
                       </div>
                       <p className="text-xs text-gray-500 italic text-center mt-4">
                         A SUS score interpreter helped translate the usability score into meaningful insights.
@@ -832,13 +832,13 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                     {/* Injected Insight side-by-side visuals */}
                     <div className="flex flex-col gap-16 w-full pt-8 pb-16 items-center justify-center">
                       <div className="w-full md:w-[75%]">
-                        <img src="/assets/CLM_Insights Annotation.png" alt="Insights Annotation Visual" className="w-full h-auto object-contain shadow-xl hover:scale-[1.01] transition-transform duration-500 rounded-[2rem] cursor-zoom-in" onClick={() => setSelectedImage("/assets/CLM_Insights Annotation.png")} />
+                        <img src="assets/CLM_Insights Annotation.png" alt="Insights Annotation Visual" className="w-full h-auto object-contain shadow-xl hover:scale-[1.01] transition-transform duration-500 rounded-[2rem] cursor-zoom-in" onClick={() => setSelectedImage("assets/CLM_Insights Annotation.png")} />
                         <p className="text-xs text-gray-500 italic text-center mt-6 px-4">
                           A glimpse into the project report: insights were annotated onto product screenshots to clearly communicate findings to stakeholders.
                         </p>
                       </div>
                       <div className="w-full md:w-[75%]">
-                        <img src="/assets/CLM_Insights Pie Chart.png" alt="Insights Pie Chart Visual" className="w-full h-auto object-contain shadow-xl hover:scale-[1.01] transition-transform duration-500 rounded-[2rem] cursor-zoom-in" onClick={() => setSelectedImage("/assets/CLM_Insights Pie Chart.png")} />
+                        <img src="assets/CLM_Insights Pie Chart.png" alt="Insights Pie Chart Visual" className="w-full h-auto object-contain shadow-xl hover:scale-[1.01] transition-transform duration-500 rounded-[2rem] cursor-zoom-in" onClick={() => setSelectedImage("assets/CLM_Insights Pie Chart.png")} />
                         <p className="text-xs text-gray-500 italic text-center mt-6 px-4">
                           A glimpse into the project report: results and data were visualised in effective formats to support better understanding and decision-making.
                         </p>
