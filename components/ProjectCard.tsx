@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Project } from '../types';
+import { getAssetUrl } from '../utils/assets';
 
 interface ProjectCardProps {
   project: Project;
@@ -19,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="aspect-[16/11] overflow-hidden relative bg-gray-50">
         {!imageError ? (
           <img 
-            src={project.imageUrl} 
+            src={getAssetUrl(project.imageUrl)} 
             alt={project.title} 
             onError={() => setImageError(true)}
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-50"

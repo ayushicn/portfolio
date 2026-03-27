@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Project, Insight } from '../types';
 import { PROJECTS } from '../constants';
+import { getAssetUrl, processHtmlAssets } from '../utils/assets';
+
 
 interface ProjectDetailProps {
   project: Project;
@@ -446,8 +448,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                     <div className="space-y-16">
                       {project.problemBullets.map((bullet, idx) => (
                         <div key={idx} className="space-y-6 max-w-full">
-                          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 font-sans" dangerouslySetInnerHTML={{ __html: bullet.h2 }} />
-                          <p className="text-lg text-gray-600 leading-relaxed font-light" dangerouslySetInnerHTML={{ __html: bullet.text }} />
+                          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 font-sans" dangerouslySetInnerHTML={{ __html: processHtmlAssets(bullet.h2) }} />
+                          <p className="text-lg text-gray-600 leading-relaxed font-light" dangerouslySetInnerHTML={{ __html: processHtmlAssets(bullet.text) }} />
                         </div>
                       ))}
                     </div>
@@ -563,10 +565,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                       <div className="w-full px-6 lg:px-12 mb-16 mx-auto">
                         <div className="w-full bg-[#FFFFFF] border border-gray-100 rounded-[2rem] p-2 md:p-5 shadow-xl shadow-gray-50/50 flex justify-center items-center">
                           <img
-                            src="assets/CLM_RG Thought Process.png"
+                            src={getAssetUrl("assets/CLM_RG Thought Process.png")}
                             alt="Research Goal Mindmap process"
                             className="w-full h-auto object-contain hover:scale-[1.01] transition-transform duration-700 cursor-zoom-in"
-                            onClick={() => setSelectedImage("assets/CLM_RG Thought Process.png")}
+                            onClick={() => setSelectedImage(getAssetUrl("assets/CLM_RG Thought Process.png"))}
                           />
                         </div>
                       </div>
@@ -581,7 +583,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                                 </div>
                                 <div className="space-y-5 flex-1">
                                   <h4 className="text-xl md:text-2xl font-bold text-gray-900 font-sans" dangerouslySetInnerHTML={{ __html: point.title }} />
-                                  <div className="text-lg text-gray-600 leading-relaxed font-light" dangerouslySetInnerHTML={{ __html: point.text }} />
+                                  <div className="text-lg text-gray-600 leading-relaxed font-light" dangerouslySetInnerHTML={{ __html: processHtmlAssets(point.text) }} />
 
                                   {point.subText && (
                                     <div className="quote-box !mt-8 !bg-gray-50/40 !shadow-none">
@@ -592,10 +594,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                                   {point.visualPlaceholder && (
                                     <div className="mt-6 w-full max-w-lg">
                                       <img
-                                        src={`assets/CLM_${point.visualPlaceholder}.png`}
+                                        src={getAssetUrl(`assets/CLM_${point.visualPlaceholder}.png`)}
                                         alt={point.visualPlaceholder}
                                         className="w-full rounded-[2rem] shadow-lg hover:scale-[1.02] transition-transform duration-500 cursor-zoom-in"
-                                        onClick={() => setSelectedImage(`assets/CLM_${point.visualPlaceholder}.png`)}
+                                        onClick={() => setSelectedImage(getAssetUrl(`assets/CLM_${point.visualPlaceholder}.png`))}
                                         onError={(e) => {
                                           e.currentTarget.style.display = 'none';
                                         }}
@@ -617,7 +619,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                           <h3 className="text-2xl md:text-4xl font-bold text-gray-900 font-sans leading-tight">{project.approachGoalPoints[3].title}</h3>
                         </div>
                         <div className="flex flex-col items-center">
-                          <div className="w-full text-lg text-gray-600 leading-relaxed font-light" dangerouslySetInnerHTML={{ __html: project.approachGoalPoints[3].text }} />
+                          <div className="w-full text-lg text-gray-600 leading-relaxed font-light" dangerouslySetInnerHTML={{ __html: processHtmlAssets(project.approachGoalPoints[3].text) }} />
                           {project.approachGoalPoints[3].subText && (
                             <div className="quote-box mt-10 !bg-gray-50/40 w-full">
                               <span className="handwritten text-xl md:text-2xl block text-gray-500 opacity-90 leading-relaxed">{project.approachGoalPoints[3].subText}</span>
@@ -660,13 +662,13 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                               </div>
                               <div className="space-y-6 flex-1 w-full">
                                 <h4 className="text-xl md:text-3xl font-bold text-gray-900 font-sans leading-tight">{item.label}</h4>
-                                <p className="text-lg text-gray-600 font-light leading-relaxed" dangerouslySetInnerHTML={{ __html: item.text }} />
+                                <p className="text-lg text-gray-600 font-light leading-relaxed" dangerouslySetInnerHTML={{ __html: processHtmlAssets(item.text) }} />
                                 {item.bullets && (
                                   <ul className="list-disc ml-8 space-y-4 font-light text-lg">
-                                    {item.bullets.map((bullet, i) => (<li key={i} className="text-gray-600 font-sans" dangerouslySetInnerHTML={{ __html: bullet }} />))}
+                                    {item.bullets.map((bullet, i) => (<li key={i} className="text-gray-600 font-sans" dangerouslySetInnerHTML={{ __html: processHtmlAssets(bullet) }} />))}
                                   </ul>
                                 )}
-                                {item.subText && <p className="text-lg text-gray-600 font-light mt-4" dangerouslySetInnerHTML={{ __html: item.subText }} />}
+                                {item.subText && <p className="text-lg text-gray-600 font-light mt-4" dangerouslySetInnerHTML={{ __html: processHtmlAssets(item.subText) }} />}
                                 {item.handwritingNote && (
                                   <div className="quote-box !mt-12 !mb-12 !bg-gray-50/40">
                                     <span className="handwritten text-xl md:text-2xl block text-gray-500 opacity-90 leading-relaxed">{item.handwritingNote}</span>
@@ -770,11 +772,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                   </div>
                   <div className="flex flex-col gap-10 lg:gap-12 mt-8 w-full">
                     <div className="space-y-8 w-full">
-                      <p className="text-xl text-gray-700 leading-relaxed font-light font-sans" dangerouslySetInnerHTML={{ __html: project.susDescription }} />
+                      <p className="text-xl text-gray-700 leading-relaxed font-light font-sans" dangerouslySetInnerHTML={{ __html: processHtmlAssets(project.susDescription) }} />
                     </div>
                     <div className="w-full h-full">
                       <div className="group relative w-full h-full bg-white border border-gray-200 rounded-[2rem] flex flex-col items-center justify-center text-center shadow-inner overflow-hidden hover:border-blue-100 transition-all duration-500 mb-4">
-                        <img src="assets/CLM_SUS Interpreter.png" alt="Comparative Benchmarking" className="w-full h-auto object-contain cursor-zoom-in" onClick={() => setSelectedImage("assets/CLM_SUS Interpreter.png")} />
+                        <img src={getAssetUrl("assets/CLM_SUS Interpreter.png")} alt="Comparative Benchmarking" className="w-full h-auto object-contain cursor-zoom-in" onClick={() => setSelectedImage(getAssetUrl("assets/CLM_SUS Interpreter.png"))} />
                       </div>
                       <p className="text-xs text-gray-500 italic text-center mt-4">
                         A SUS score interpreter helped translate the usability score into meaningful insights.
@@ -832,13 +834,13 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                     {/* Injected Insight side-by-side visuals */}
                     <div className="flex flex-col gap-16 w-full pt-8 pb-16 items-center justify-center">
                       <div className="w-full md:w-[75%]">
-                        <img src="assets/CLM_Insights Annotation.png" alt="Insights Annotation Visual" className="w-full h-auto object-contain shadow-xl hover:scale-[1.01] transition-transform duration-500 rounded-[2rem] cursor-zoom-in" onClick={() => setSelectedImage("assets/CLM_Insights Annotation.png")} />
+                        <img src={getAssetUrl("assets/CLM_Insights Annotation.png")} alt="Insights Annotation Visual" className="w-full h-auto object-contain shadow-xl hover:scale-[1.01] transition-transform duration-500 rounded-[2rem] cursor-zoom-in" onClick={() => setSelectedImage(getAssetUrl("assets/CLM_Insights Annotation.png"))} />
                         <p className="text-xs text-gray-500 italic text-center mt-6 px-4">
                           A glimpse into the project report: insights were annotated onto product screenshots to clearly communicate findings to stakeholders.
                         </p>
                       </div>
                       <div className="w-full md:w-[75%]">
-                        <img src="assets/CLM_Insights Pie Chart.png" alt="Insights Pie Chart Visual" className="w-full h-auto object-contain shadow-xl hover:scale-[1.01] transition-transform duration-500 rounded-[2rem] cursor-zoom-in" onClick={() => setSelectedImage("assets/CLM_Insights Pie Chart.png")} />
+                        <img src={getAssetUrl("assets/CLM_Insights Pie Chart.png")} alt="Insights Pie Chart Visual" className="w-full h-auto object-contain shadow-xl hover:scale-[1.01] transition-transform duration-500 rounded-[2rem] cursor-zoom-in" onClick={() => setSelectedImage(getAssetUrl("assets/CLM_Insights Pie Chart.png"))} />
                         <p className="text-xs text-gray-500 italic text-center mt-6 px-4">
                           A glimpse into the project report: results and data were visualised in effective formats to support better understanding and decision-making.
                         </p>
@@ -875,7 +877,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                               <div className="space-y-8">
                                 {item.details?.map((detail, dIdx) => (
                                   <div key={dIdx} className="space-y-2">
-                                    <p className="text-lg text-gray-600 font-light leading-relaxed" dangerouslySetInnerHTML={{ __html: detail.text }} />
+                                    <p className="text-lg text-gray-600 font-light leading-relaxed" dangerouslySetInnerHTML={{ __html: processHtmlAssets(detail.text) }} />
                                   </div>
                                 ))}
                               </div>
