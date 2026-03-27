@@ -1,0 +1,8 @@
+{
+  "name": "Remix: UX Research Portfolio",
+  "description": "A high-end, professional portfolio for a UX Researcher, featuring case studies, research methodologies, and interactive AI-powered insights.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
