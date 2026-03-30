@@ -13,7 +13,6 @@ import { PROJECTS } from './constants';
 // import imgKLMSession from './assets/UXR @ KLM.jpg';
 import WhatfixFirstDay from './assets/Whatfix First Day.jpg';
 import SattvicDiet from './assets/Sattvic diet.jpg';
-import BehanceIcon from './assets/behance icon 2.png';
 import imgDance from './assets/Dance Crew.jpg';
 import imgFirstDayTUD from './assets/First day at TUD.jpg';
 import imgFirstSnow from './assets/First Snow @ Czech.jpg';

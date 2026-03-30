@@ -492,7 +492,7 @@ export const PROJECTS: Project[] = [
     id: 'behance-more',
     title: 'See more on Behance',
     tagline: 'Earlier professional and academic case studies',
-    imageUrl: 'assets/behance icon 2.png',
+    imageUrl: 'assets/behance icon.png',
     accentColor: "#053EFF",
     methods: [],
     overview: 'Portfolio',
