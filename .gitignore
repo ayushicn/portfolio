@@ -23,3 +23,7 @@ npm-debug.log*
 
 # Misc
 *.pem
+
+# Project-specific scratch files
+Computer.png
+content/
