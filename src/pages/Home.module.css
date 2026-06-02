@@ -1,0 +1,101 @@
+/* ── Hero ──────────────────────────────────────────────────────────── */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(5rem, 12vw, 8rem) var(--page-padding) clamp(3rem, 6vw, 5rem);
+}
+
+.heroInner {
+  max-width: 680px;
+}
+
+.heroName {
+  font-family: var(--font-sans);
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.heroTitle {
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+/* Typewriter line — same size as heading, slightly muted so it reads
+   as the dynamic complement to the static "Hi, I lead" */
+.heroTypewriter {
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.heroSubline {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.heroSublineStatus {
+  color: var(--color-text-muted);
+}
+
+/* ── Selected Work ────────────────────────────────────────────────── */
+.workSection {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding) var(--space-16);
+}
+
+.workHeader {
+  margin-bottom: 0;
+}
+
+.sectionLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tag);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
+
+.projectList {
+  /* Each CaseStudyCard row has its own border-top */
+}
+
+/* ── Contact CTA ──────────────────────────────────────────────────── */
+.ctaSection {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-8) var(--page-padding);
+}
+
+.ctaInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.ctaText {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+.ctaLink {
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 200ms ease;
+}
+
+.ctaLink:hover {
+  opacity: 0.6;
+}

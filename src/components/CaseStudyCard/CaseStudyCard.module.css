@@ -1,0 +1,182 @@
+/* ── Project Row — horizontal layout matching editorial reference ── */
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+  padding: var(--space-7) 0;
+  border-top: 1px solid var(--color-border);
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
+/* Clickable rows */
+.row.clickable {
+  cursor: pointer;
+}
+
+.row.clickable:hover .title {
+  opacity: 0.6;
+}
+
+.row.clickable:hover .coverImg {
+  transform: scale(1.03);
+}
+
+/* Non-clickable (coming soon) */
+.row.comingSoon {
+  cursor: default;
+}
+
+/* ── Text column ─────────────────────────────────────────────────── */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 480px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.index {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.comingSoonBadge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-tag);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: var(--text-h2);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  transition: opacity 200ms ease;
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+/* Tags — pipe-separated inline style */
+.tags {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+  line-height: var(--leading-normal);
+}
+
+.viewLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-top: var(--space-1);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.row.clickable:hover .viewLink {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Image column ─────────────────────────────────────────────────── */
+.imageCol {
+  background-color: var(--color-project-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 400ms var(--ease-gentle);
+}
+
+.coverSvg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+  transition: transform 400ms var(--ease-gentle);
+}
+
+/* Behance cover */
+.coverGradient {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-project-bg);
+}
+
+.behanceIcon {
+  width: 80px;
+  height: auto;
+  transition: transform 400ms var(--ease-gentle);
+}
+
+.row.clickable:hover .behanceIcon {
+  transform: scale(1.06);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+
+/* Tablet: stack vertically, image first */
+@media (max-width: 800px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    padding: var(--space-6) 0;
+  }
+
+  .textCol {
+    max-width: 100%;
+    order: 2;
+  }
+
+  .imageCol {
+    order: 1;
+    aspect-ratio: 16 / 9;
+  }
+}

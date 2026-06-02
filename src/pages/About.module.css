@@ -1,0 +1,115 @@
+/* ── About page ─────────────────────────────────────────────────── */
+
+.page {
+  padding-bottom: var(--space-16);
+}
+
+/* ── Collage section ─────────────────────────────────────────────── */
+.collageSection {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 4rem) var(--page-padding) 0;
+}
+
+/* ── Bio paragraphs ──────────────────────────────────────────────── */
+.bioSection {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--page-padding) var(--space-6);
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-7);
+}
+
+.bioInner {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.bioPara {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  text-align: left;
+}
+
+.bioParaLead {
+  font-size: 1.0625rem;
+  color: var(--color-text-primary);
+}
+
+/* ── Facts bar ───────────────────────────────────────────────────── */
+.factsSection {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-6) var(--page-padding) var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.factsInner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.factItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.factLabel {
+  font-family: var(--font-sans);
+  font-size: var(--text-tag);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tag);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.factValue {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--color-text-primary);
+  line-height: var(--leading-snug);
+  max-width: 260px;
+}
+
+.factDivider {
+  width: 1px;
+  height: 36px;
+  background-color: var(--color-border);
+  align-self: center;
+}
+
+.factLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  align-self: center;
+}
+
+.factLink {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-border);
+  transition: text-decoration-color 200ms ease, opacity 200ms ease;
+}
+
+.factLink:hover {
+  opacity: 0.55;
+  text-decoration-color: var(--color-text-primary);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .factsInner { gap: var(--space-4); }
+  .factDivider { display: none; }
+}

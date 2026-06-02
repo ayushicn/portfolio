@@ -1,0 +1,71 @@
+:root {
+  /* ─── Surfaces ───────────────────────────────────────────────────── */
+  --color-bg: #ffffff;
+  --color-bg-elevated: #f8f8fa;     /* subtle off-white for project image bg */
+  --color-project-bg: #f0f0f5;      /* light lavender-gray for image containers */
+  --color-surface-ink: #0f0f0f;     /* near-black */
+
+  /* ─── Text ───────────────────────────────────────────────────────── */
+  --color-text-primary: #0f0f0f;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #888888;
+
+  /* ─── Accent (used sparingly) ────────────────────────────────────── */
+  --color-accent: #0f0f0f;
+  --color-accent-hover: #333333;
+
+  /* ─── Lines & borders ────────────────────────────────────────────── */
+  --color-border: #e8e8e8;
+  --color-border-strong: #0f0f0f;
+
+  /* ─── Tags ───────────────────────────────────────────────────────── */
+  --color-tag-bg: transparent;
+  --color-tag-border: #d0d0d0;
+  --color-tag-text: #666666;
+
+  /* ─── Typography — all DM Sans, pure sans-serif ──────────────────── */
+  --font-sans: 'DM Sans Variable', 'DM Sans', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Helvetica, Arial, sans-serif;
+
+  /* Scale */
+  --text-display: clamp(2.5rem, 5vw, 4rem);    /* hero name */
+  --text-h1: clamp(1.75rem, 3vw, 2.25rem);     /* section headings */
+  --text-h2: 1.25rem;                          /* project titles */
+  --text-body-lg: 1.0625rem;                   /* hero subtitle */
+  --text-body: 0.9375rem;                      /* default body */
+  --text-small: 0.8125rem;                     /* captions, meta */
+  --text-tag: 0.75rem;                         /* method tags */
+  --text-nav: 0.75rem;                         /* nav links */
+
+  /* Line heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* Letter spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-tag: 0.06em;
+
+  /* ─── Spacing (8px base grid) ────────────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 80px;
+  --space-12: 96px;
+  --space-16: 128px;
+
+  /* ─── Layout ──────────────────────────────────────────────────────── */
+  --max-width: 1080px;
+  --page-padding: clamp(1.5rem, 5vw, 4rem);
+  --nav-height: 60px;
+
+  /* ─── Motion ─────────────────────────────────────────────────────── */
+  --ease-gentle: cubic-bezier(0.22, 1, 0.36, 1);
+}

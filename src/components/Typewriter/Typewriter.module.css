@@ -1,0 +1,28 @@
+.wrapper {
+  display: inline;
+}
+
+/* Blinking block cursor */
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background-color: currentColor;
+  margin-left: 3px;
+  vertical-align: middle;
+  border-radius: 1px;
+  animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Respect reduced-motion: stop blinking */
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+    opacity: 1;
+  }
+}
