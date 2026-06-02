@@ -17,7 +17,9 @@ const CaseStudyCard: React.FC<Props> = ({ study, index }) => {
   const isPitchLink = isClickable && href.includes('pitch.com');
   const isBehanceLink = isClickable && href.includes('behance.net');
   const hasTooltip = isPitchLink || isBehanceLink;
-  const tooltipFavicon = isPitchLink ? 'https://pitch.com/favicon.ico' : 'https://www.behance.net/favicon.ico';
+  const tooltipFavicon = isPitchLink
+    ? 'https://www.google.com/s2/favicons?domain=pitch.com&sz=32'
+    : 'https://www.google.com/s2/favicons?domain=behance.net&sz=32';
   const tooltipLabel = isPitchLink ? 'Open in Pitch' : 'Open in Behance';
 
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
