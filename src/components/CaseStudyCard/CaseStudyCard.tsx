@@ -15,6 +15,10 @@ const CaseStudyCard: React.FC<Props> = ({ study, index }) => {
   const isSvg = study.coverImage.endsWith('.svg');
   const isBehance = study.isBehance ?? false;
   const isPitchLink = isClickable && href.includes('pitch.com');
+  const isBehanceLink = isClickable && href.includes('behance.net');
+  const hasTooltip = isPitchLink || isBehanceLink;
+  const tooltipFavicon = isPitchLink ? 'https://pitch.com/favicon.ico' : 'https://www.behance.net/favicon.ico';
+  const tooltipLabel = isPitchLink ? 'Open in Pitch' : 'Open in Behance';
 
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const [tooltipVisible, setTooltipVisible] = useState(false);
@@ -84,22 +88,22 @@ const CaseStudyCard: React.FC<Props> = ({ study, index }) => {
         rel="noopener noreferrer"
         className={`${styles.row} ${styles.clickable}`}
         aria-label={`${study.title} — opens in new tab`}
-        onMouseMove={isPitchLink ? handleMouseMove : undefined}
-        onMouseEnter={isPitchLink ? () => setTooltipVisible(true) : undefined}
-        onMouseLeave={isPitchLink ? () => setTooltipVisible(false) : undefined}
+        onMouseMove={hasTooltip ? handleMouseMove : undefined}
+        onMouseEnter={hasTooltip ? () => setTooltipVisible(true) : undefined}
+        onMouseLeave={hasTooltip ? () => setTooltipVisible(false) : undefined}
       >
         {rowContent}
       </a>
 
       {/* Cursor-following tooltip — rendered outside <a> so position:fixed works cleanly */}
-      {isPitchLink && tooltipVisible && (
+      {hasTooltip && tooltipVisible && (
         <div
           className={styles.pitchTooltip}
           style={{ left: tooltipPos.x, top: tooltipPos.y }}
           aria-hidden="true"
         >
-          <img src="https://pitch.com/favicon.ico" width="13" height="13" alt="" />
-          <span>Open in Pitch</span>
+          <img src={tooltipFavicon} width="13" height="13" alt="" />
+          <span>{tooltipLabel}</span>
         </div>
       )}
     </>
