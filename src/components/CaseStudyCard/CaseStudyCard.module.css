@@ -113,6 +113,7 @@
 
 /* ── Image column ─────────────────────────────────────────────────── */
 .imageCol {
+  position: relative;
   background-color: var(--color-project-bg);
   border-radius: 4px;
   overflow: hidden;
@@ -158,6 +159,26 @@
 
 .row.clickable:hover .behanceIcon {
   transform: scale(1.06);
+}
+
+/* ── Pitch tooltip — follows cursor ──────────────────────────────── */
+.pitchTooltip {
+  position: fixed;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
 }
 
 /* ── Responsive ──────────────────────────────────────────────────── */

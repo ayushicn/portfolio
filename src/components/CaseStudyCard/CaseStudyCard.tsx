@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import type { CaseStudy } from '../../content/case-studies';
 import styles from './CaseStudyCard.module.css';
@@ -14,36 +14,25 @@ const CaseStudyCard: React.FC<Props> = ({ study, index }) => {
 
   const isSvg = study.coverImage.endsWith('.svg');
   const isBehance = study.isBehance ?? false;
+  const isPitchLink = isClickable && href.includes('pitch.com');
 
-  // Format index as 01, 02, etc.
+  const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+
   const indexLabel = String(index + 1).padStart(2, '0');
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    setTooltipPos({ x: e.clientX + 16, y: e.clientY + 16 });
+  };
 
   const imageEl = isBehance ? (
     <div className={styles.coverGradient} aria-label="Behance">
-      <img
-        src={study.coverImage}
-        alt="Behance"
-        className={styles.behanceIcon}
-        loading="lazy"
-        decoding="async"
-      />
+      <img src={study.coverImage} alt="Behance" className={styles.behanceIcon} loading="lazy" decoding="async" />
     </div>
   ) : isSvg ? (
-    <img
-      src={study.coverImage}
-      alt=""
-      className={styles.coverSvg}
-      loading="lazy"
-      decoding="async"
-    />
+    <img src={study.coverImage} alt="" className={styles.coverSvg} loading="lazy" decoding="async" />
   ) : (
-    <img
-      src={study.coverImage}
-      alt=""
-      className={styles.coverImg}
-      loading="lazy"
-      decoding="async"
-    />
+    <img src={study.coverImage} alt="" className={styles.coverImg} loading="lazy" decoding="async" />
   );
 
   const rowContent = (
@@ -58,7 +47,6 @@ const CaseStudyCard: React.FC<Props> = ({ study, index }) => {
         </div>
 
         <h2 className={styles.title}>{study.title}</h2>
-
         <p className={styles.description}>{study.description}</p>
 
         {study.tags.length > 0 && (
@@ -82,25 +70,39 @@ const CaseStudyCard: React.FC<Props> = ({ study, index }) => {
 
   if (!isClickable) {
     return (
-      <article
-        className={`${styles.row} ${styles.comingSoon}`}
-        aria-label={`${study.title} — coming soon`}
-      >
+      <article className={`${styles.row} ${styles.comingSoon}`} aria-label={`${study.title} — coming soon`}>
         {rowContent}
       </article>
     );
   }
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`${styles.row} ${styles.clickable}`}
-      aria-label={`${study.title} — opens in new tab`}
-    >
-      {rowContent}
-    </a>
+    <>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${styles.row} ${styles.clickable}`}
+        aria-label={`${study.title} — opens in new tab`}
+        onMouseMove={isPitchLink ? handleMouseMove : undefined}
+        onMouseEnter={isPitchLink ? () => setTooltipVisible(true) : undefined}
+        onMouseLeave={isPitchLink ? () => setTooltipVisible(false) : undefined}
+      >
+        {rowContent}
+      </a>
+
+      {/* Cursor-following tooltip — rendered outside <a> so position:fixed works cleanly */}
+      {isPitchLink && tooltipVisible && (
+        <div
+          className={styles.pitchTooltip}
+          style={{ left: tooltipPos.x, top: tooltipPos.y }}
+          aria-hidden="true"
+        >
+          <img src="https://pitch.com/favicon.ico" width="13" height="13" alt="" />
+          <span>Open in Pitch</span>
+        </div>
+      )}
+    </>
   );
 };
 
