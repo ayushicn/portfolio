@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import type { CaseStudy } from '../../content/case-studies';
 import styles from './CaseStudyCard.module.css';
@@ -14,8 +15,9 @@ const CaseStudyCard: React.FC<Props> = ({ study, index }) => {
 
   const isSvg = study.coverImage.endsWith('.svg');
   const isBehance = study.isBehance ?? false;
-  const isPitchLink = isClickable && href.includes('pitch.com');
-  const isBehanceLink = isClickable && href.includes('behance.net');
+  const isInternalLink = isClickable && !!study.slug;
+  const isPitchLink = isClickable && !isInternalLink && href.includes('pitch.com');
+  const isBehanceLink = isClickable && !isInternalLink && href.includes('behance.net');
   const hasTooltip = isPitchLink || isBehanceLink;
   const tooltipFavicon = isPitchLink
     ? 'https://www.google.com/s2/favicons?domain=pitch.com&sz=32'
@@ -79,6 +81,19 @@ const CaseStudyCard: React.FC<Props> = ({ study, index }) => {
       <article className={`${styles.row} ${styles.comingSoon}`} aria-label={`${study.title} — coming soon`}>
         {rowContent}
       </article>
+    );
+  }
+
+  // Internal page link (e.g. case study one-pager)
+  if (isInternalLink) {
+    return (
+      <Link
+        to={`/work/${study.slug}`}
+        className={`${styles.row} ${styles.clickable}`}
+        aria-label={study.title}
+      >
+        {rowContent}
+      </Link>
     );
   }
 

@@ -12,6 +12,7 @@ export type CaseStudy = {
   comingSoon?: boolean;     // shows 'Coming Soon' badge; card is not clickable
   externalUrl?: string;     // override for non-Pitch external links (e.g. Behance)
   isBehance?: boolean;      // applies special Behance card style
+  slug?: string;            // if present, card links to /work/[slug] instead of pitchUrl
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -25,6 +26,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverImage: '/case-studies/clm-thumbnail.png',
     pitchUrl: 'https://pitch.com/v/a-4-week-strategic-ux-research-for-clm-dashboard-i5rvk4',
     featured: true,
+    slug: 'clm-dashboard',
   },
   {
     id: 'ai-ux-foundation',
