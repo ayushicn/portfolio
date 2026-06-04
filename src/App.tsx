@@ -13,7 +13,9 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="work" element={<Work />} />
-          <Route path="work/clm-dashboard" element={<CLMDashboard />} />
+          {import.meta.env.DEV && (
+            <Route path="work/clm-dashboard" element={<CLMDashboard />} />
+          )}
           <Route path="about" element={<About />} />
           <Route path="resume" element={<Resume />} />
         </Route>
