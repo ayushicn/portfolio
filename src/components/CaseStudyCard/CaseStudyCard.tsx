@@ -15,7 +15,7 @@ const CaseStudyCard: React.FC<Props> = ({ study, index }) => {
 
   const isSvg = study.coverImage.endsWith('.svg');
   const isBehance = study.isBehance ?? false;
-  const isInternalLink = isClickable && !!study.slug;
+  const isInternalLink = isClickable && !!study.slug && import.meta.env.DEV;
   const isPitchLink = isClickable && !isInternalLink && href.includes('pitch.com');
   const isBehanceLink = isClickable && !isInternalLink && href.includes('behance.net');
   const hasTooltip = isPitchLink || isBehanceLink;
