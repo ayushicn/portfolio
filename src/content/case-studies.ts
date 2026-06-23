@@ -17,6 +17,18 @@ export type CaseStudy = {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
+    id: 'ai-ux-foundation',
+    title: "Establishing the AI UX Foundation: Discovery Research for Whatfix's AI-First Product Line",
+    year: 'Ongoing',
+    description:
+      "Led co-creation and discovery to establish the core UX principles and vision that now govern Whatfix's AI-first product line.",
+    tags: ['foundational research', 'AI', 'strategic visioning', 'B2B'],
+    coverImage: '/case-studies/assistant-thumbnail.png',
+    pitchUrl: 'https://pitch.com/v/establishing-the-ux-foundation-for-ai-assistant-923iqp',
+    featured: true,
+    slug: 'ai-ux-foundation',
+  },
+  {
     id: 'clm-dashboard',
     title: 'Reframing a 4-week usability test into a strategic concept study',
     year: '2024',
@@ -27,19 +39,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     pitchUrl: 'https://pitch.com/v/a-4-week-strategic-ux-research-for-clm-dashboard-i5rvk4',
     featured: true,
     slug: 'clm-dashboard',
-  },
-  {
-    id: 'ai-ux-foundation',
-    title: "Establishing the AI UX Foundation: Discovery Research for Whatfix's AI-First Product Line",
-    year: 'Ongoing',
-    description:
-      "Led co-creation and discovery to establish the core UX principles and vision that now govern Whatfix's AI-first product line.",
-    tags: ['foundational research', 'AI', 'strategic visioning', 'B2B'],
-    coverImage: '/case-studies/assistant-thumbnail.png',
-    // TODO: pitch-url — replace with your Pitch.com deck URL for AI UX Foundation
-    pitchUrl: '#placeholder-pitch-link',
-    featured: true,
-    comingSoon: true,
   },
   {
     id: 'whatfix-mirror',
