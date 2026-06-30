@@ -1,0 +1,229 @@
+/* ── Wrapper — constrained to page content width ─────────────────── */
+.wrapper {
+  max-width: var(--max-width);
+  margin: 80px auto 0;
+  padding: 0 var(--page-padding) 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Section label ────────────────────────────────────────────────── */
+.heading {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ── Strip container — stays within content column ────────────────── */
+.strip {
+  width: 100%;
+  position: relative;
+  height: 96px;
+}
+
+/* ── Gradient border lines (top + bottom) ─────────────────────────── */
+.strip::before,
+.strip::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent);
+  pointer-events: none;
+}
+
+.strip::before {
+  top: 0;
+}
+
+.strip::after {
+  bottom: 0;
+}
+
+/* ── Scroll area — edge-fade mask ─────────────────────────────────── */
+.scrollArea {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 100px,
+    black calc(100% - 100px),
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 100px,
+    black calc(100% - 100px),
+    transparent 100%
+  );
+}
+
+/* ── Scrolling track ──────────────────────────────────────────────── */
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 35s linear infinite;
+}
+
+.scrollArea:hover .track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── One set of logos ──────────────────────────────────────────────── */
+.logoSet {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ── Individual logo item ─────────────────────────────────────────── */
+.logoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 55px;
+}
+
+/* ── Base logo image ──────────────────────────────────────────────── */
+.logoImg {
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Per-logo optical sizing ──────────────────────────────────────── */
+
+.tudelft {
+  height: 38px;
+  width: auto;
+}
+
+.klm {
+  height: 38px;
+  width: auto;
+}
+
+/* Slightly larger — complex mark needs extra size for legibility */
+.artOfLiving {
+  height: 44px;
+  width: auto;
+}
+
+.whatfix {
+  height: 38px;
+  width: auto;
+}
+
+/* ── Tablet (768px–1024px) ─────────────────────────────────────────── */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .logoItem {
+    padding: 0 40px;
+  }
+
+  .tudelft {
+    height: 34px;
+  }
+
+  .klm {
+    height: 34px;
+  }
+
+  .artOfLiving {
+    height: 40px;
+  }
+
+  .whatfix {
+    height: 34px;
+  }
+}
+
+/* ── Mobile (<768px) ──────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .wrapper {
+    padding-bottom: 48px;
+  }
+
+  .heading {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  .strip {
+    height: 72px;
+  }
+
+  .scrollArea {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 80px,
+      black calc(100% - 80px),
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 80px,
+      black calc(100% - 80px),
+      transparent 100%
+    );
+  }
+
+  .logoItem {
+    padding: 0 30px;
+  }
+
+  .tudelft {
+    height: 28px;
+  }
+
+  .klm {
+    height: 28px;
+  }
+
+  .artOfLiving {
+    height: 32px;
+  }
+
+  .whatfix {
+    height: 28px;
+  }
+}
+
+/* ── Accessibility ────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    justify-content: center;
+  }
+
+  .logoSet:nth-child(2) {
+    display: none;
+  }
+
+  .scrollArea {
+    justify-content: center;
+  }
+}

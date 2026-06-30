@@ -2,11 +2,20 @@
 .hero {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: clamp(5rem, 12vw, 8rem) var(--page-padding) clamp(3rem, 6vw, 5rem);
+  padding: 48px var(--page-padding) 48px;
 }
 
-.heroInner {
-  max-width: 680px;
+/* Two-column layout: text left 66%, photo right 30%, gap 4% */
+.heroColumns {
+  display: grid;
+  grid-template-columns: 66% 30%;
+  gap: 4%;
+  align-items: center;
+}
+
+/* ── Hero text column ─────────────────────────────────────────────── */
+.heroText {
+  min-width: 0;
 }
 
 .heroName {
@@ -24,8 +33,6 @@
   color: var(--color-text-primary);
 }
 
-/* Typewriter line — same size as heading, slightly muted so it reads
-   as the dynamic complement to the static "Hi, I lead" */
 .heroTypewriter {
   color: var(--color-text-secondary);
   font-weight: 400;
@@ -44,6 +51,26 @@
 
 .heroSublineStatus {
   color: var(--color-text-muted);
+}
+
+/* ── Hero photo column ────────────────────────────────────────────── */
+.heroPhotoCol {
+  align-self: stretch;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.heroPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 400ms var(--ease-gentle);
+}
+
+.heroPhotoCol:hover .heroPhoto {
+  transform: scale(1.03);
 }
 
 /* ── Selected Work ────────────────────────────────────────────────── */
@@ -98,4 +125,47 @@
 
 .ctaLink:hover {
   opacity: 0.6;
+}
+
+/* ── Tablet (768px – 1024px) ──────────────────────────────────────── */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .heroColumns {
+    grid-template-columns: 64% 32%;
+    gap: 4%;
+  }
+
+  .heroName {
+    font-size: calc(var(--text-display) * 0.9);
+  }
+}
+
+/* ── Mobile (<768px) ──────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .hero {
+    padding: 28px var(--page-padding) 28px;
+  }
+
+  .heroColumns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .heroPhotoCol {
+    order: -1;
+    margin-bottom: var(--space-4);
+    align-self: auto;
+    border-radius: 8px;
+    max-height: 340px;
+  }
+
+  .heroPhoto {
+    width: 100%;
+    height: auto;
+    max-height: 340px;
+    object-position: top center;
+  }
+
+  .heroName {
+    font-size: clamp(2rem, 9vw, 2.5rem);
+  }
 }
