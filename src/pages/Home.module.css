@@ -66,11 +66,13 @@
   object-fit: cover;
   object-position: center top;
   display: block;
-  transition: transform 400ms var(--ease-gentle);
+  filter: grayscale(1);
+  transition: transform 400ms var(--ease-gentle), filter 400ms var(--ease-gentle);
 }
 
 .heroPhotoCol:hover .heroPhoto {
   transform: scale(1.03);
+  filter: grayscale(0);
 }
 
 /* ── Selected Work ────────────────────────────────────────────────── */
