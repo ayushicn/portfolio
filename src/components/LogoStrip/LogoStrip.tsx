@@ -28,6 +28,11 @@ const LOGOS: Logo[] = [
     alt: 'Whatfix',
     className: 'whatfix',
   },
+  {
+    src: '/case-studies/OneTrust_logo.png',
+    alt: 'OneTrust',
+    className: 'onetrust',
+  },
 ];
 
 const LogoSet: React.FC<{ withAlt?: boolean }> = ({ withAlt = false }) => (

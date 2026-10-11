@@ -111,6 +111,9 @@ const Resume: React.FC = () => {
                   {group.heading !== '' && (
                     <p className={styles.groupHeading}>{group.heading}</p>
                   )}
+                  {group.intro && (
+                    <p className={styles.groupIntro}>{group.intro}</p>
+                  )}
                   <ul className={styles.bulletList} role="list">
                     {group.bullets.map((bullet, k) => (
                       <li key={k} className={styles.bullet}>

@@ -136,6 +136,12 @@
   width: auto;
 }
 
+/* Very wide wordmark — shorter height keeps visual weight in line */
+.onetrust {
+  height: 26px;
+  width: auto;
+}
+
 /* ── Tablet (768px–1024px) ─────────────────────────────────────────── */
 @media (max-width: 1024px) and (min-width: 768px) {
   .logoItem {
@@ -156,6 +162,10 @@
 
   .whatfix {
     height: 34px;
+  }
+
+  .onetrust {
+    height: 23px;
   }
 }
 
@@ -209,6 +219,10 @@
 
   .whatfix {
     height: 28px;
+  }
+
+  .onetrust {
+    height: 19px;
   }
 }
 

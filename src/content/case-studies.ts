@@ -26,7 +26,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverImage: '/case-studies/assistant-thumbnail.png',
     pitchUrl: 'https://pitch.com/v/establishing-the-ux-foundation-for-ai-assistant-923iqp',
     featured: true,
-    slug: 'ai-ux-foundation',
   },
   {
     id: 'clm-dashboard',
@@ -38,7 +37,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverImage: '/case-studies/clm-thumbnail.png',
     pitchUrl: 'https://pitch.com/v/a-4-week-strategic-ux-research-for-clm-dashboard-i5rvk4',
     featured: true,
-    slug: 'clm-dashboard',
   },
   {
     id: 'whatfix-mirror',

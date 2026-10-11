@@ -192,6 +192,15 @@
   letter-spacing: 0.01em;
 }
 
+/* Optional lead-in paragraph between a group heading and its bullets */
+.groupIntro {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
 /* ── Bullets ─────────────────────────────────────────────────────── */
 .bulletList {
   list-style: none;
@@ -271,7 +280,7 @@
   .rule { border-top-color: #000; margin-bottom: 24px; }
   .sectionRule { border-top-color: #ccc; }
   .name, .sectionHeading, .heading, .groupHeading { color: #000; }
-  .titleLine, .contact, .summaryText, .roleName,
+  .titleLine, .contact, .summaryText, .groupIntro, .roleName,
   .roleLocation, .bullet, .skillsList, .skillPill { color: #333; }
   .roleDates, .bulletDot, .skillsLabel { color: #666; }
   .skillPill { border-color: #ccc; }
