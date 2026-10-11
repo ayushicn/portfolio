@@ -44,7 +44,6 @@ const Home: React.FC = () => {
 
             <div className={styles.heroSubline}>
               <p>As a Senior UX Researcher, leveraging strategic UXR to converge user needs with high-stakes business goals.</p>
-              <p className={styles.heroSublineStatus}>Currently, open to senior research roles.</p>
             </div>
           </motion.div>
 
